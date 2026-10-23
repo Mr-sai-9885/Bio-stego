@@ -1,0 +1,6 @@
+[build.environment]
+  # These settings are public by design. Next.js embeds NEXT_PUBLIC_* values
+  # in browser bundles; WebAuthn publishes its RP name, RP ID, and origin.
+  # CI is a build flag whose common value also occurs throughout dependencies.
+  # Keep this list explicit: private credentials must remain scanned.
+  SECRETS_SCAN_OMIT_KEYS = "CI,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY,WEBAUTHN_RP_NAME,WEBAUTHN_RP_ID,WEBAUTHN_ORIGIN"
